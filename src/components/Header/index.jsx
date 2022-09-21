@@ -1,0 +1,21 @@
+import { default as Logo } from '../../assets/Logo.svg';
+import { Link } from 'react-router-dom';
+
+const Header = () => {
+    return (
+    <div className='headerContainer'>
+            <img className='logo' src={Logo} alt="" />
+            <div className='linksContainer'>
+                <Link className='headerLink'>Accueil</Link>
+                <Link className='headerLink'>Profil</Link>
+                <Link className='headerLink'>Réglage</Link>
+                <Link className='headerLink'>Communauté</Link>
+            </div>
+            
+        
+    </div>
+    )
+   
+}
+
+export default Header

@@ -1,0 +1,31 @@
+.sideBar{
+    position: absolute;
+    top: 0;
+    width: 70px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: black;
+    min-height:100%;
+    z-index: 2;
+}
+
+.sidebarIconsContainer{
+    top: 10px;
+    height: 300px;
+    margin-top: auto;
+    width: 50%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.copyright{
+    bottom: 0;
+    margin-bottom: 30px;
+    color: white;
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+    font-size: 12px;
+}

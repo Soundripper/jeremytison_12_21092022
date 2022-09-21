@@ -1,0 +1,28 @@
+.headerContainer{
+    position: relative;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: black;
+    height: 80px;
+    z-index: 10;
+}
+
+.logo{
+    width: 160px;
+    position: absolute;
+    left: 20px;
+}
+
+.linksContainer{
+    margin-left: 240px;
+    margin-right: 60px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+.headerLink{
+    color: white;
+    font-size: 20px;
+    text-decoration: none;
+}

@@ -1,10 +1,11 @@
-// import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter } from "react-router-dom";
+import Profile from "./pages/Profile";
 
 function App() {
   return (
-    <div>
-      <p>Bonjour !</p>
-    </div>
+    <BrowserRouter>
+        <Profile />
+    </BrowserRouter>
   );
 }
 

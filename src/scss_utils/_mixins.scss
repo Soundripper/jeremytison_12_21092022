@@ -1,0 +1,8 @@
+@mixin shadow{
+    box-shadow: 0px 2px 5px grey;
+} 
+
+@mixin shadowHover{
+    box-shadow: 0px 2px 15px grey;
+} 
+

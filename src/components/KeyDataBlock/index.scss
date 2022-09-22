@@ -1,0 +1,24 @@
+.keyDataBlock{
+    display: flex;
+    width: 150px;
+    // justify-content: center;
+    // align-items: center;
+    height: 50px;
+    background-color: #FBFBFB;
+    padding: 20px;
+    border-radius: 5px;
+    // margin: 5px 0px 5px 0;
+}
+.iconKeyData{
+    width: 50px;
+    display: flex;
+}
+.keyDataCountAndName{
+    display: flex;
+    flex-direction: column;
+    margin-left: 15px;
+    justify-content: center;
+}
+.keyDataCount h4, .keyDataName h6{
+    margin: 3px;
+}

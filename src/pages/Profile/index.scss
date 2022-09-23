@@ -13,7 +13,25 @@
 
 .activityGraph{
     background-color: #FBFBFB;
-    padding-top: 80px;
+    // padding-top: 80px;
+    .activityGraph_titleContainer{
+        display: flex;
+        justify-content: space-between;
+        .activityGraphLegend{
+            display: flex;
+            .activityGraph_mesure{
+                display: flex;
+                margin: 0 20px 0 20px;
+                .mesureDot{
+                    width: 5px;
+                    margin-right: 5px;
+                }
+            }
+        }
+    }
+    .activityGraph_title{
+        margin-left: 20px
+    }
 }
 
 .graphsMainContainer{
@@ -39,22 +57,39 @@
     margin-bottom: 10px;
     display: flex;
     justify-content: space-between;
-    // width: 93%;
-    // height: 300px;
+    min-width: 500px;
 }
 
 .sessionGraph{
+    display: flex;
+    width: 32%;
     background-color: #FF0000;
-    // padding-top: 20px;
+    display: flex;
+    flex-direction: column;
     border-radius: 5px;
+    .sessionGraph_title{
+        // position: relative;
+        color: white;
+        height: 10px;
+        margin-left: 13px;
+        margin-right: 13px;
+        margin-bottom: 30px;
+        font-size: 0.8em;
+    }
+    .sessionGraphRecharts{
+        position: relative;
+        top: 30px;
+    }
 }
 .performanceGraph{
     background-color: #1f1f1f;
     // padding-top: 20px;
     border-radius: 5px;
+    width: 32%;
 }
 .scoreGraph{
-    // background-color: #1f1f1f;
+    width: 32%;
+    background-color: #FBFBFB;
     // padding-top: 20px;
     border-radius: 5px;
 }

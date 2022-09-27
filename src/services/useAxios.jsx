@@ -7,13 +7,15 @@ const useAxios = () => {
     const [isLoading, setIsLoading] = useState(false);
 
     const getData = async () => {
+        setIsLoading(true);
         try {
-            const res = await axios.get('../../mocks/mocked_data.js');
+            const res = await axios.get('./mocks/mocked_data.js'); 
             const data = await res.js();
             setData(() => data);
             setIsLoading(false);
         } catch (error) {
-            
+            setHasError(true);
+            setIsLoading(false);
         }
     }
 

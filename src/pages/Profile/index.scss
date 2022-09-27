@@ -1,5 +1,9 @@
 .dashBoardContainer{
-    padding: 0 20px 0 90px;
+    padding: 0 20px 0 110px;
+    // margin-bottom: 20px;
+    // height: 70%;
+    display: flex;
+    flex-direction: column;
 }
 
 .welcome{
@@ -8,12 +12,11 @@
 }
 
 .firstName{
-    color: red;
+    color: #FF0101;
 }
 
 .activityGraph{
     background-color: #FBFBFB;
-    // padding-top: 80px;
     .activityGraph_titleContainer{
         display: flex;
         justify-content: space-between;
@@ -32,6 +35,15 @@
     .activityGraph_title{
         margin-left: 20px
     }
+    .user-number{
+        color: white;
+        font-size: 12px;
+        padding: 8px;
+    }
+    .custom-tooltip-activity{
+        background-color: red;
+        height: 100%;
+    }
 }
 
 .graphsMainContainer{
@@ -45,6 +57,7 @@
 }
 
 .keyDataContainer{
+    padding-bottom: 10px;
     width: 25%;
     display: flex;
     flex-direction: column;
@@ -57,7 +70,7 @@
     margin-bottom: 10px;
     display: flex;
     justify-content: space-between;
-    min-width: 500px;
+    // min-width: 500px;
 }
 
 .sessionGraph{
@@ -69,7 +82,7 @@
     border-radius: 5px;
     .sessionGraph_title{
         // position: relative;
-        color: white;
+        color: rgba(255, 255, 255, 0.5);
         height: 10px;
         margin-left: 13px;
         margin-right: 13px;
@@ -78,18 +91,36 @@
     }
     .sessionGraphRecharts{
         position: relative;
-        top: 30px;
+        // top: 30px;
+    }
+    .custom-tooltip-sessions{
+        background-color: white;
+        padding: 5px 10px 5px 10px;
+        font-size: 12px;
     }
 }
-.performanceGraph{
+.performanceGraphContainer{
     background-color: #1f1f1f;
-    // padding-top: 20px;
+    padding-top: 1%;
     border-radius: 5px;
     width: 32%;
+    .perfGraph{
+        // position: relative;
+        // top: 2%;
+    }
 }
 .scoreGraph{
     width: 32%;
     background-color: #FBFBFB;
-    // padding-top: 20px;
+    padding-top: 1%;
     border-radius: 5px;
+}
+.scoreGraph_scoreCenter{
+    height: 0px;
+    width: 30%;
+    line-height: 12px;
+    position: relative;
+    font-size: 10px;
+    top: 45%;
+    left: 40%;
 }

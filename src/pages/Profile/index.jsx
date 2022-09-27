@@ -10,13 +10,15 @@ import { default as Dot_Red } from '../../assets/Dot_Red.svg';
 import { default as Dot_Black } from '../../assets/Dot_Black.svg';
 import useAxios from '../../services/useAxios';
 import { Label, RadialBarChart, RadialBar, Radar, RadarChart, PolarGrid, PolarAngleAxis, PolarRadiusAxis, BarChart, Bar, Cell, XAxis, YAxis, CartesianGrid, Tooltip, Legend, LineChart, Line, ResponsiveContainer} from 'recharts';
-import { USER_MAIN_DATA, USER_ACTIVITY, USER_AVERAGE_SESSIONS, USER_PERFORMANCE } from '../../mocks/mocked_data';
-
-const currentUserMainData = USER_MAIN_DATA.filter((el) => el.id === 12);
-const currentUserActivity = USER_ACTIVITY.filter((el) => el.userId === 12);
-const currentUserAverageSessions = USER_AVERAGE_SESSIONS.filter((el) => el.userId === 12);
-const currentUserPerformance = USER_PERFORMANCE.filter((el) => el.userId === 12);
+// import { USER_MAIN_DATA, USER_ACTIVITY, USER_AVERAGE_SESSIONS, USER_PERFORMANCE } from '../../mocks/mocked_data';
+// const currentUserMainData = USER_MAIN_DATA.filter((el) => el.id === 12);
+// const currentUserActivity = USER_ACTIVITY.filter((el) => el.userId === 12);
+// const currentUserAverageSessions = USER_AVERAGE_SESSIONS.filter((el) => el.userId === 12);
+// const currentUserPerformance = USER_PERFORMANCE.filter((el) => el.userId === 12);
 // console.log(currentUserActivity[0].sessions[0].kilogram);
+// console.log(dataActivity);
+
+
 
 const dataEx = [
     {
@@ -73,10 +75,7 @@ const CustomTooltipSessions = ({ active, payload, label }) => {
 };
 
 const Profile = () => {
-    // const {data, isLoading} = useAxios();
-    // useEffect (() => {
-    //     console.log(data);
-    // }, [data])
+    const {hasError, isLoading, dataActivity, dataUser, dataSessions, dataPerformance} = useAxios();
     
     return (
         <>  
@@ -86,7 +85,7 @@ const Profile = () => {
             
                 <div className='welcome'>
                     <h2>Bonjour&nbsp;</h2>
-                    <h2 className='firstName'>{currentUserMainData[0].userInfos.firstName}</h2>
+                    <h2 className='firstName'>{dataUser.userInfos.firstName}</h2>
                 </div>
                 <div>
                     <h5>Félicitation ! Vous avez explosé vos objectifs hier 👏</h5>
@@ -107,7 +106,7 @@ const Profile = () => {
                                 barGap={15}
                                 width={500}
                                 height={300}
-                                data={currentUserActivity[0].sessions}
+                                data={dataActivity.sessions}
                                 margin={{
                                     top: 5,
                                     right: 30,
@@ -131,7 +130,7 @@ const Profile = () => {
                             <div className='sessionGraph'>
                                 <div className='sessionGraph_title'><h5>Durée moyenne des sessions</h5></div>
                                 <ResponsiveContainer className='sessionGraphRecharts' width="100%" aspect={1.2}>
-                                    <LineChart width={100} height={100} data={currentUserAverageSessions[0].sessions} margin={{
+                                    <LineChart width={100} height={100} data={dataSessions.sessions} margin={{
                                     top: 30,
                                     right: 10,
                                     left: 10,
@@ -152,7 +151,7 @@ const Profile = () => {
 
                             <div className='performanceGraphContainer'>
                                 <ResponsiveContainer className='perfGraph' width="100%" aspect={1}>
-                                    <RadarChart cx="50%" cy="50%" outerRadius="80%" data={currentUserPerformance[0].data}
+                                    <RadarChart cx="50%" cy="50%" outerRadius="80%" data={dataPerformance.data}
                                     margin={{top: 0, right: 0, left: 0, bottom: 0}}>
                                     <PolarGrid radialLines={false} />
                                     <PolarAngleAxis dataKey="kind" stroke="#FFFFFF"
@@ -186,10 +185,10 @@ const Profile = () => {
                         </div>
                     </div>
                     <div className='keyDataContainer'>
-                        <KeyDataBlock keyImg={Calories} calorieCount={currentUserMainData[0].keyData.calorieCount}/>
-                        <KeyDataBlock keyImg={Protein} calorieCount={currentUserMainData[0].keyData.proteinCount}/>
-                        <KeyDataBlock keyImg={Carbs} calorieCount={currentUserMainData[0].keyData.carbohydrateCount}/>
-                        <KeyDataBlock keyImg={Fat} calorieCount={currentUserMainData[0].keyData.lipidCount}/>
+                        <KeyDataBlock keyImg={Calories} calorieCount={dataUser.keyData.calorieCount}/>
+                        <KeyDataBlock keyImg={Protein} calorieCount={dataUser.keyData.proteinCount}/>
+                        <KeyDataBlock keyImg={Carbs} calorieCount={dataUser.keyData.carbohydrateCount}/>
+                        <KeyDataBlock keyImg={Fat} calorieCount={dataUser.keyData.lipidCount}/>
                     </div>
                 </div>
                 

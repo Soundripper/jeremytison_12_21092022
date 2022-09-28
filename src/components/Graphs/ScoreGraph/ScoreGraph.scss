@@ -1,0 +1,27 @@
+.scoreGraph{
+    width: 32%;
+    background-color: #FBFBFB;
+    // padding-top: 1%;
+    border-radius: 5px;
+    // display: flex;
+    // justify-content: center;
+    // align-items: center;
+}
+.scoreGraph_scoreCenter{
+    height: 0px;
+    // width: 30%;
+    // line-height: 12px;
+    position: relative;
+    font-size: 1.1vw;
+    top: 40%;
+    // left: 50%;
+    text-align: center;
+}
+
+.percentage{
+    font-size: 1.7vw;
+}
+
+.radial{
+    text-align: center;
+}

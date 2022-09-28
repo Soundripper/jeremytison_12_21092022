@@ -1,0 +1,30 @@
+.sessionGraph{
+    // display: flex;
+    width: 32%;
+    background-color: #FF0000;
+    display: flex;
+    flex-direction: column;
+    border-radius: 5px;
+    .sessionGraph_title{
+        margin: 8px;
+        margin-bottom: 0;
+        position: relative;
+        top: 0;
+        width: 80%;
+        color: rgba(255, 255, 255, 0.5);
+        height: 10px;
+        font-size: 0.8rem;
+        // margin-left: 0.3rem;
+        // top: 10px;
+    }
+    .sessionGraphRecharts{
+        position: relative;
+        top: 30px;
+        // margin-bottom: 30px;
+    }
+    .custom-tooltip-sessions{
+        background-color: white;
+        padding: 5px 15px 5px 15px;
+        font-size: 0.7em;
+    }
+}

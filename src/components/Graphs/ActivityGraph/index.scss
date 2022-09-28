@@ -1,0 +1,30 @@
+.activityGraph{
+    background-color: #FBFBFB;
+    .activityGraph_titleContainer{
+        display: flex;
+        justify-content: space-between;
+        .activityGraphLegend{
+            display: flex;
+            .activityGraph_mesure{
+                display: flex;
+                margin: 0 20px 0 20px;
+                .mesureDot{
+                    width: 5px;
+                    margin-right: 5px;
+                }
+            }
+        }
+    }
+    .activityGraph_title{
+        margin-left: 20px
+    }
+    .user-number{
+        color: white;
+        font-size: 12px;
+        padding: 8px;
+    }
+    .custom-tooltip-activity{
+        background-color: red;
+        height: 100%;
+    }
+}

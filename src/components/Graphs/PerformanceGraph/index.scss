@@ -1,10 +1,20 @@
 .performanceGraphContainer{
     background-color: #1f1f1f;
-    padding-top: 1%;
     border-radius: 5px;
     width: 32%;
-    .perfGraph{
-        // position: relative;
-        // top: 2%;
-    }
+}
+
+.recharts-polar-angle-axis-tick:nth-child(1) {
+    transform: translateY(-0.5vw);
+}
+.recharts-polar-angle-axis-tick:nth-child(4) {
+    transform: translateY(0.5vw);
+}
+.recharts-polar-angle-axis-tick:nth-child(2),
+.recharts-polar-angle-axis-tick:nth-child(3){
+    transform: translateX(0.5vw);
+}
+.recharts-polar-angle-axis-tick:nth-child(5), 
+.recharts-polar-angle-axis-tick:nth-child(6){
+    transform: translateX(-0.5vw);
 }

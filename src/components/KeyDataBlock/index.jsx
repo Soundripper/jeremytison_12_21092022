@@ -1,14 +1,12 @@
-
-
-const KeyDataBlock = ({keyImg, calorieCount}) => {
+const KeyDataBlock = ({keyImg, count, type, mesure}) => {
     return (
         <div className='keyDataBlock'>
             <div className='iconKeyData'>
                 <img src={keyImg} alt="" />
             </div>
             <div className='keyDataCountAndName'>
-                <div className='keyDataCount'><h4>{calorieCount}kCal</h4></div>
-                <div className='keyDataName'><h6>Calories</h6></div>    
+                <div className='keyDataCount'><h4>{count}{mesure}</h4></div>
+                <div className='keyDataName'><h6>{type}</h6></div>    
             </div>
         </div>
     )

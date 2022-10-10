@@ -1,15 +1,14 @@
-import { Label, RadialBarChart, RadialBar, Radar, RadarChart, PolarGrid, PolarAngleAxis, PolarRadiusAxis, BarChart, Bar, Cell, XAxis, YAxis, CartesianGrid, Tooltip, Legend, LineChart, Line, ResponsiveContainer} from 'recharts';
+import { RadialBarChart, RadialBar, Legend, ResponsiveContainer} from 'recharts';
 import './ScoreGraph.scss'
 
 
 const styleRadial = {
     top: '10%', 
     transform: 'translate(0, -40%)',
-    fontSize: 12
+    fontSize: '1.3vw'
     };
 
 const ScoreGraph = (data) => {
-    console.log(data);
     const scoreEx = [
         {
             name: 'Score',
@@ -21,7 +20,6 @@ const ScoreGraph = (data) => {
         },
     ]
 
-    console.log(scoreEx);
     return (
         <div className='scoreGraph'>
             <div className='scoreGraph_scoreCenter'><div className='percentage'>{scoreEx[0].uv}% </div>de votre objectif</div>
@@ -30,8 +28,6 @@ const ScoreGraph = (data) => {
                 <RadialBarChart className='radial' innerRadius="75%" outerRadius="100%" barSize={10} data={scoreEx} startAngle={90} endAngle={450}>
                     <RadialBar
                         minAngle={15}
-                        // label={{ position: 'center', fill: '#000' }}
-                        // background
                         dataKey="uv"
                         fill= '#FF0101'
                         cornerRadius={30 / 2}

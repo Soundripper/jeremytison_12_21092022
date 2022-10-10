@@ -1,4 +1,4 @@
-import { Label, RadialBarChart, RadialBar, Radar, RadarChart, PolarGrid, PolarAngleAxis, PolarRadiusAxis, BarChart, Bar, Cell, XAxis, YAxis, CartesianGrid, Tooltip, Legend, LineChart, Line, ResponsiveContainer} from 'recharts';
+import { XAxis, Tooltip, LineChart, Line, ResponsiveContainer} from 'recharts';
 import './SessionGraph.scss'
 const CustomTooltipSessions = ({ active, payload, label }) => {
     if (active && payload && payload.length) {
@@ -17,7 +17,7 @@ const CustomTooltipSessions = ({ active, payload, label }) => {
 };
 
 const SessionGraph = (data) => {
-    console.log(data);
+    // console.log(data);
     return (
         <div className='sessionGraph'>
             <div className='sessionGraph_title'>Durée moyenne des sessions</div>

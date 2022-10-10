@@ -1,11 +1,15 @@
-import { BrowserRouter } from "react-router-dom";
+import { BrowserRouter, Routes, Route, useParams } from 'react-router-dom';
 import Profile from "./pages/Profile";
 
 function App() {
   return (
     <BrowserRouter>
-        <Profile />
+      <Routes>
+        <Route path="/user/:id" element={<Profile />} > </Route>
+      </Routes>
     </BrowserRouter>
+
+    
   );
 }
 

@@ -1,23 +1,33 @@
 import { XAxis, Tooltip, LineChart, Line, ResponsiveContainer} from 'recharts';
 import './SessionGraph.scss'
-const CustomTooltipSessions = ({ active, payload, label }) => {
+import PropTypes from "prop-types";
+
+/**
+ * 
+ * @param {object} CustomTooltipSessions
+ * @param {boolean} CustomTooltipSessions.active Boolean changing if hovering day data
+ * @param {array} CustomTooltipSessions.payload Day and session length
+ * @returns custom tooltip when hovering data (in minutes)
+ */
+const CustomTooltipSessions = ({ active, payload }) => {
     if (active && payload && payload.length) {
-        // payload[0].chartType = "AreaChart";
         return (
         <div className="custom-tooltip-sessions">
-            {/* <p className="label">{payload[0].value}</p> */}
-            <p className="user-number">
+            <p>
                 {payload[0].payload.sessionLength}min
             </p>
-            {/* <p className="time">{label}</p> */}
         </div>
         );
     }
     return null;
 };
 
+/**
+ * 
+ * @param {array} data from average sessions
+ * @returns average sessions graph
+ */
 const SessionGraph = (data) => {
-    // console.log(data);
     return (
         <div className='sessionGraph'>
             <div className='sessionGraph_title'>Durée moyenne des sessions</div>
@@ -41,6 +51,10 @@ const SessionGraph = (data) => {
             </ResponsiveContainer>
         </div>
     )
+}
+
+SessionGraph.propTypes = {
+    data: PropTypes.array,
 }
 
 export default SessionGraph

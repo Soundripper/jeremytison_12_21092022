@@ -1,6 +1,10 @@
-import { BrowserRouter, Routes, Route, useParams } from 'react-router-dom';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Profile from "./pages/Profile";
 
+/**
+ * 
+ * @returns profile page from user Id
+ */
 function App() {
   return (
     <BrowserRouter>
@@ -8,8 +12,6 @@ function App() {
         <Route path="/user/:id" element={<Profile />} > </Route>
       </Routes>
     </BrowserRouter>
-
-    
   );
 }
 

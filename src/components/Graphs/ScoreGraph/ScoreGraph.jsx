@@ -1,13 +1,20 @@
 import { RadialBarChart, RadialBar, Legend, ResponsiveContainer} from 'recharts';
 import './ScoreGraph.scss'
+import PropTypes from "prop-types";
 
-
+/**
+ * Styles the legend (Score) of the Score Graph
+ */
 const styleRadial = {
     top: '10%', 
     transform: 'translate(0, -40%)',
     fontSize: '1.3vw'
     };
-
+/**
+ * 
+ * @param {array} data the data for the score graph
+ * @returns the score graph
+ */
 const ScoreGraph = (data) => {
     const scoreEx = [
         {
@@ -37,6 +44,10 @@ const ScoreGraph = (data) => {
             </ResponsiveContainer>
         </div>
     )
+}
+
+ScoreGraph.propTypes = {
+    data: PropTypes.array,
 }
 
 export default ScoreGraph

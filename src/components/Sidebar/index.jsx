@@ -3,6 +3,10 @@ import { default as Swimming } from '../../assets/Swimming.svg';
 import { default as Bicycle } from '../../assets/Bicycle.svg';
 import { default as Dumbbell } from '../../assets/Dumbbell.svg';
 
+/**
+ * 
+ * @returns The sidebar on the left
+ */
 const Sidebar = () => {
     return(
     <div className='sideBar'>

@@ -1,3 +1,14 @@
+import PropTypes from "prop-types";
+
+/**
+ * 
+ * @param {Object} KeyDataBlock 
+ * @param {url} KeyDataBlock.keyImg Url of source image
+ * @param {number} KeyDataBlock.count Intake count 
+ * @param {string} KeyDataBlock.mesure Unit (kCal or grams)
+ * @param {string} KeyDataBlock.type Intake type
+ * @returns Block displaying intakes
+ */
 const KeyDataBlock = ({keyImg, count, type, mesure}) => {
     return (
         <div className='keyDataBlock'>
@@ -10,6 +21,13 @@ const KeyDataBlock = ({keyImg, count, type, mesure}) => {
             </div>
         </div>
     )
+}
+
+KeyDataBlock.propTypes = {
+    keyImg: PropTypes.string,
+    count: PropTypes.number,
+    type: PropTypes.string,
+    mesure: PropTypes.string,
 }
 
 export default KeyDataBlock;

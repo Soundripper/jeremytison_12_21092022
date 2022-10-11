@@ -2,8 +2,16 @@ import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContaine
 import { default as Dot_Red } from '../../../assets/Dot_Red.svg';
 import { default as Dot_Black } from '../../../assets/Dot_Black.svg';
 import './index.scss'
+import PropTypes from "prop-types";
 
-const CustomTooltipAcitivity = ({ active, payload, label }) => {
+/**
+ * 
+ * @param {Object} CustomTooltipAcitivity Custom activity tooltip 
+ * @param {boolean} CustomTooltipAcitivity.active If hovering day data
+ * @param {array} CustomTooltipAcitivity.payload Weight and calories
+ * @returns Custom tooltip when hovering data
+ */
+const CustomTooltipAcitivity = ({ active, payload }) => {
     if (active && payload && payload.length) {
         return (
         <div className="custom-tooltip-activity">
@@ -19,6 +27,11 @@ const CustomTooltipAcitivity = ({ active, payload, label }) => {
     return null;
 };
 
+/**
+ * 
+ * @param {array} data Datas for the activity graph
+ * @returns the daily activity graph
+ */
 const ActivityGraph = (data) => {
     return (
         <div className='activityGraph'>
@@ -55,6 +68,10 @@ const ActivityGraph = (data) => {
         </div>
     )
 
+}
+
+ActivityGraph.propTypes = {
+    dataActivity: PropTypes.array,
 }
 
 export default ActivityGraph;

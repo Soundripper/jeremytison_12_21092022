@@ -13,27 +13,34 @@ import { default as Carbs } from '../../assets/Carbs.svg';
 import { default as Fat } from '../../assets/Fat.svg';
 import { useParams } from 'react-router-dom';
 import {dataGetUser, dataGetActivity, dataGetSessions, dataGetPerformance} from '../../services/dataGet.jsx';
-// import PropTypes from "prop-types";
 
+/**
+ * 
+ * @returns Profile page
+ */
 const Profile = () => {
+    /**
+     * @type {boolean} set to true to use mocked data or false to use API calls 
+     */
     const mock = true;
     const {id} = useParams();
     
-    const [isLoading, setLoading] = useState(true);
+    const [isLoading, setIsLoading] = useState(true);
     const [dataUser, setDataUser] = useState();
     const [dataSessions, setDataSessions] = useState();
     const [dataPerformance, setDataPerformance] = useState();
     const [dataActivity, setDataActivity] = useState(); 
-
+    
     useEffect(() => {
-            setDataUser(dataGetUser(mock, Number(id)));
-            setDataSessions(dataGetSessions(mock, Number(id)));
-            setDataPerformance(dataGetPerformance(mock, Number(id)));
-            setDataActivity(dataGetActivity(mock, Number(id)));
-            setLoading(false);
+            const fetchDatas = async () => {
+                setDataUser(await dataGetUser(mock, Number(id)));
+                setDataSessions(await dataGetSessions(mock, Number(id)));
+                setDataPerformance(await dataGetPerformance(mock, Number(id)));
+                setDataActivity(await dataGetActivity(mock, Number(id)));
+                setIsLoading(false);
+            }
+            fetchDatas()
     }, []);
-
-    console.log(dataUser);
     
     if (isLoading) {
         return <div >Loading...</div>;
@@ -69,9 +76,5 @@ const Profile = () => {
         </>
     );
 }
-
-// Profile.propTypes = {
-//     mock: PropTypes.number,
-// }
 
 export default Profile

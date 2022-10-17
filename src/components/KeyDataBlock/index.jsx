@@ -9,6 +9,10 @@ import PropTypes from "prop-types";
  * @param {string} KeyDataBlock.type Intake type
  * @returns Block displaying intakes
  */
+
+/**
+ * Returns the blocks (intakes)
+ */
 const KeyDataBlock = ({keyImg, count, type, mesure}) => {
     return (
         <div className='keyDataBlock'>

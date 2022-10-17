@@ -23,6 +23,7 @@ const Profile = () => {
      * @type {boolean} set to true to use mocked data or false to use API calls 
      */
     const mock = true;
+
     const {id} = useParams();
     
     const [isLoading, setIsLoading] = useState(true);
@@ -42,6 +43,9 @@ const Profile = () => {
             fetchDatas()
     }, []);
     
+    /**
+     * Returns loading div if data is loading
+     */
     if (isLoading) {
         return <div >Loading...</div>;
     }

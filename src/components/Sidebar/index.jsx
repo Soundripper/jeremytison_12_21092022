@@ -5,7 +5,7 @@ import { default as Dumbbell } from '../../assets/Dumbbell.svg';
 
 /**
  * 
- * @returns The sidebar on the left
+ * @returns Left sidebar
  */
 const Sidebar = () => {
     return(

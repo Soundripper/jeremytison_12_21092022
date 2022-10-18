@@ -11,7 +11,7 @@ import PropTypes from "prop-types";
  * @param {array} CustomTooltipAcitivity.payload Weight and calories
  * @returns Custom tooltip when hovering data
  */
-const CustomTooltipAcitivity = ({ active, payload }) => {
+const CustomTooltipActivity = ({ active, payload }) => {
     if (active && payload && payload.length) {
         return (
         <div className="custom-tooltip-activity">
@@ -59,7 +59,7 @@ const ActivityGraph = (data) => {
                 <XAxis dataKey="day" axisLine={false} fontSize={14} tickLine={false}/>
                 <YAxis yAxisId="kg" orientation='right' axisLine={false} fontSize={14} tickLine={false} tickCount={4} dataKey="kilogram" domain={['dataMin-1', 'dataMax+1']} />
                 <YAxis yAxisId="cal" hide={true} domain={[0, 'dataMax+100']} />
-                <Tooltip content={<CustomTooltipAcitivity />} wrapperStyle={{ outline: "none" }}/>
+                <Tooltip content={<CustomTooltipActivity />} wrapperStyle={{ outline: "none" }}/>
                 {/* <Legend /> */}
                 <Bar dataKey="kilogram" fill="#282D30" barSize={8} radius={[5, 5, 0, 0]} yAxisId="kg"/>
                 <Bar dataKey="calories" fill="#E60000" barSize={8} radius={[5, 5, 0, 0]} yAxisId="cal"/>
@@ -67,7 +67,6 @@ const ActivityGraph = (data) => {
             </ResponsiveContainer>
         </div>
     )
-
 }
 
 ActivityGraph.propTypes = {

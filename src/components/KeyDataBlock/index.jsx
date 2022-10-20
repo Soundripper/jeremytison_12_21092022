@@ -28,10 +28,10 @@ const KeyDataBlock = ({keyImg, count, type, mesure}) => {
 }
 
 KeyDataBlock.propTypes = {
-    keyImg: PropTypes.string,
-    count: PropTypes.number,
-    type: PropTypes.string,
-    mesure: PropTypes.string,
+    keyImg: PropTypes.string.isRequired,
+    count: PropTypes.number.isRequired,
+    type: PropTypes.string.isRequired,
+    mesure: PropTypes.string.isRequired,
 }
 
 export default KeyDataBlock;

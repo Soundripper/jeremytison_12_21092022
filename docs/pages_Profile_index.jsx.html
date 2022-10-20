@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: pages/Profile/index.jsx</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: pages/Profile/index.jsx</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>import { useEffect, useState } from 'react';
+import './index.scss'
+import Header from '../../components/Header'
+import Sidebar from '../../components/Sidebar'
+import ActivityGraph from '../../components/Graphs/ActivityGraph';
+import PerformanceGraph from '../../components/Graphs/PerformanceGraph';
+import ScoreGraph from '../../components/Graphs/ScoreGraph/ScoreGraph';
+import SessionGraph from '../../components/Graphs/SessionGraph/SessionGraph';
+import KeyDataBlock from '../../components/KeyDataBlock';
+import { default as Calories } from '../../assets/Calories.svg';
+import { default as Protein } from '../../assets/Protein.svg';
+import { default as Carbs } from '../../assets/Carbs.svg';
+import { default as Fat } from '../../assets/Fat.svg';
+import { useParams } from 'react-router-dom';
+import {dataGetUser, dataGetActivity, dataGetSessions, dataGetPerformance} from '../../services/dataGet.jsx';
+
+/**
+ * 
+ * @returns Profile page
+ */
+const Profile = () => {
+    /**
+     * @type {boolean} set to true to use mocked data or false to use API calls 
+     */
+    const mock = false;
+
+    const {id} = useParams();
+    
+    const [isLoading, setIsLoading] = useState(true);
+    const [dataUser, setDataUser] = useState();
+    const [dataSessions, setDataSessions] = useState();
+    const [dataPerformance, setDataPerformance] = useState();
+    const [dataActivity, setDataActivity] = useState(); 
+    
+    useEffect(() => {
+            const fetchDatas = async () => {
+                setDataUser(await dataGetUser(mock, Number(id)));
+                setDataSessions(await dataGetSessions(mock, Number(id)));
+                setDataPerformance(await dataGetPerformance(mock, Number(id)));
+                setDataActivity(await dataGetActivity(mock, Number(id)));
+                setIsLoading(false);
+            }
+            fetchDatas()
+    }, []);
+    
+    /**
+     * Returns loading div if data is loading
+     */
+    if (isLoading) {
+        return &lt;div >Loading...&lt;/div>;
+    }
+
+    return (
+        &lt;>  
+            &lt;Header />
+            &lt;Sidebar />
+            &lt;div className='dashBoardContainer'>
+                &lt;div className='welcome'>
+                    &lt;h2>Bonjour&amp;nbsp;&lt;/h2>
+                    &lt;h2 className='firstName'>{dataUser.userInfos.firstName}&lt;/h2>
+                &lt;/div>
+                &lt;div>&lt;h5>Félicitation ! Vous avez explosé vos objectifs hier 👏&lt;/h5>&lt;/div>
+                &lt;div className='dataContainer'>
+                    &lt;div className='graphsMainContainer'>
+                        &lt;ActivityGraph dataActivity={dataActivity.sessions} />
+                        &lt;div className='sessionsPerfsScoreContainer'>
+                            &lt;SessionGraph dataSessions={dataSessions} />
+                            &lt;PerformanceGraph dataPerformance={dataPerformance} />
+                            &lt;ScoreGraph score={dataUser.score} />
+                        &lt;/div>
+                    &lt;/div>
+                    &lt;div className='keyDataContainer'>
+                        &lt;KeyDataBlock keyImg={Calories} count={dataUser.keyData.calorieCount} type="Calories" mesure ="kCal"/>
+                        &lt;KeyDataBlock keyImg={Protein} count={dataUser.keyData.proteinCount} type="Protéines" mesure ="g"/>
+                        &lt;KeyDataBlock keyImg={Carbs} count={dataUser.keyData.carbohydrateCount} type="Glucides" mesure ="g"/>
+                        &lt;KeyDataBlock keyImg={Fat} count={dataUser.keyData.lipidCount} type="Lipides" mesure ="g"/>
+                    &lt;/div>
+                &lt;/div>
+            &lt;/div>
+        &lt;/>
+    );
+}
+
+export default Profile</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Global</h3><ul><li><a href="global.html#ActivityGraph">ActivityGraph</a></li><li><a href="global.html#App">App</a></li><li><a href="global.html#CustomTooltipActivity">CustomTooltipActivity</a></li><li><a href="global.html#CustomTooltipSessions">CustomTooltipSessions</a></li><li><a href="global.html#dataGetActivity">dataGetActivity</a></li><li><a href="global.html#dataGetPerformance">dataGetPerformance</a></li><li><a href="global.html#dataGetSessions">dataGetSessions</a></li><li><a href="global.html#dataGetUser">dataGetUser</a></li><li><a href="global.html#findData">findData</a></li><li><a href="global.html#formatActivityDay">formatActivityDay</a></li><li><a href="global.html#formatPerformance">formatPerformance</a></li><li><a href="global.html#formatScore">formatScore</a></li><li><a href="global.html#formatSessionDay">formatSessionDay</a></li><li><a href="global.html#Header">Header</a></li><li><a href="global.html#KeyDataBlock">KeyDataBlock</a></li><li><a href="global.html#PerformanceGraph">PerformanceGraph</a></li><li><a href="global.html#Profile">Profile</a></li><li><a href="global.html#ScoreGraph">ScoreGraph</a></li><li><a href="global.html#SessionGraph">SessionGraph</a></li><li><a href="global.html#Sidebar">Sidebar</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.11</a> on Thu Oct 20 2022 08:59:56 GMT+0200 (heure d’été d’Europe centrale)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

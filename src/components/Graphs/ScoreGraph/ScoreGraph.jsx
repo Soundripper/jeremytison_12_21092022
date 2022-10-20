@@ -47,7 +47,7 @@ const ScoreGraph = (data) => {
 }
 
 ScoreGraph.propTypes = {
-    data: PropTypes.array,
+    data: PropTypes.array.isRequired,
 }
 
 export default ScoreGraph

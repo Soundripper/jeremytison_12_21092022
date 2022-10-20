@@ -9,6 +9,7 @@ import PropTypes from "prop-types";
  * @param {Object} CustomTooltipAcitivity Custom activity tooltip 
  * @param {boolean} CustomTooltipAcitivity.active If hovering day data
  * @param {array} CustomTooltipAcitivity.payload Weight and calories
+ * 
  * @returns Custom tooltip when hovering data
  */
 const CustomTooltipActivity = ({ active, payload }) => {
@@ -30,6 +31,7 @@ const CustomTooltipActivity = ({ active, payload }) => {
 /**
  * 
  * @param {array} data Datas for the activity graph
+ * 
  * @returns the daily activity graph
  */
 const ActivityGraph = (data) => {
@@ -70,7 +72,7 @@ const ActivityGraph = (data) => {
 }
 
 ActivityGraph.propTypes = {
-    dataActivity: PropTypes.array,
+    dataActivity: PropTypes.array.isRequired,
 }
 
 export default ActivityGraph;

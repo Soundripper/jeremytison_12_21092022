@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: components/Graphs/ActivityGraph/index.jsx</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: components/Graphs/ActivityGraph/index.jsx</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer} from 'recharts';
+import { default as Dot_Red } from '../../../assets/Dot_Red.svg';
+import { default as Dot_Black } from '../../../assets/Dot_Black.svg';
+import './index.scss'
+import PropTypes from "prop-types";
+
+/**
+ * 
+ * @param {Object} CustomTooltipAcitivity Custom activity tooltip 
+ * @param {boolean} CustomTooltipAcitivity.active If hovering day data
+ * @param {array} CustomTooltipAcitivity.payload Weight and calories
+ * 
+ * @returns Custom tooltip when hovering data
+ */
+const CustomTooltipActivity = ({ active, payload }) => {
+    if (active &amp;&amp; payload &amp;&amp; payload.length) {
+        return (
+        &lt;div className="custom-tooltip-activity">
+            &lt;p className="user-number">
+                {payload[0].payload.kilogram}kg
+            &lt;/p>
+            &lt;p className="user-number">
+                {payload[0].payload.calories}kCal
+            &lt;/p>
+        &lt;/div>
+        );
+    }
+    return null;
+};
+
+/**
+ * 
+ * @param {array} data Datas for the activity graph
+ * 
+ * @returns the daily activity graph
+ */
+const ActivityGraph = (data) => {
+    return (
+        &lt;div className='activityGraph'>
+            &lt;div className='activityGraph_titleContainer'>
+                &lt;div className='activityGraph_title'>&lt;h6>Activité quotidienne&lt;/h6>&lt;/div>
+                &lt;div className='activityGraphLegend'>
+                    &lt;div className='activityGraph_mesure'>&lt;img className='mesureDot' src={Dot_Black} alt="" />&lt;h6>Poids (kg)&lt;/h6>&lt;/div>
+                    &lt;div className='activityGraph_mesure'>&lt;img className='mesureDot' src={Dot_Red} alt="" />&lt;h6>Calories brûlées (kCal)&lt;/h6>&lt;/div>
+                &lt;/div>
+            &lt;/div>
+            &lt;ResponsiveContainer width="100%" aspect={5}>
+                &lt;BarChart
+                barGap={15}
+                width={500}
+                height={300}
+                data={data.dataActivity}
+                margin={{
+                    top: 5,
+                    right: 30,
+                    left: 20,
+                    bottom: 5,
+                }}
+                >
+                &lt;CartesianGrid strokeDasharray="1 1 1" vertical={false} />
+                &lt;XAxis dataKey="day" axisLine={false} fontSize={14} tickLine={false}/>
+                &lt;YAxis yAxisId="kg" orientation='right' axisLine={false} fontSize={14} tickLine={false} tickCount={4} dataKey="kilogram" domain={['dataMin-1', 'dataMax+1']} />
+                &lt;YAxis yAxisId="cal" hide={true} domain={[0, 'dataMax+100']} />
+                &lt;Tooltip content={&lt;CustomTooltipActivity />} wrapperStyle={{ outline: "none" }}/>
+                {/* &lt;Legend /> */}
+                &lt;Bar dataKey="kilogram" fill="#282D30" barSize={8} radius={[5, 5, 0, 0]} yAxisId="kg"/>
+                &lt;Bar dataKey="calories" fill="#E60000" barSize={8} radius={[5, 5, 0, 0]} yAxisId="cal"/>
+                &lt;/BarChart>
+            &lt;/ResponsiveContainer>
+        &lt;/div>
+    )
+}
+
+ActivityGraph.propTypes = {
+    dataActivity: PropTypes.array.isRequired,
+}
+
+export default ActivityGraph;</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Global</h3><ul><li><a href="global.html#ActivityGraph">ActivityGraph</a></li><li><a href="global.html#App">App</a></li><li><a href="global.html#CustomTooltipActivity">CustomTooltipActivity</a></li><li><a href="global.html#CustomTooltipSessions">CustomTooltipSessions</a></li><li><a href="global.html#dataGetActivity">dataGetActivity</a></li><li><a href="global.html#dataGetPerformance">dataGetPerformance</a></li><li><a href="global.html#dataGetSessions">dataGetSessions</a></li><li><a href="global.html#dataGetUser">dataGetUser</a></li><li><a href="global.html#findData">findData</a></li><li><a href="global.html#formatActivityDay">formatActivityDay</a></li><li><a href="global.html#formatPerformance">formatPerformance</a></li><li><a href="global.html#formatScore">formatScore</a></li><li><a href="global.html#formatSessionDay">formatSessionDay</a></li><li><a href="global.html#Header">Header</a></li><li><a href="global.html#KeyDataBlock">KeyDataBlock</a></li><li><a href="global.html#PerformanceGraph">PerformanceGraph</a></li><li><a href="global.html#Profile">Profile</a></li><li><a href="global.html#ScoreGraph">ScoreGraph</a></li><li><a href="global.html#SessionGraph">SessionGraph</a></li><li><a href="global.html#Sidebar">Sidebar</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.11</a> on Thu Oct 20 2022 08:59:56 GMT+0200 (heure d’été d’Europe centrale)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

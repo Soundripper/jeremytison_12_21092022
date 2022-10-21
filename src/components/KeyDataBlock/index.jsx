@@ -7,6 +7,7 @@ import PropTypes from "prop-types";
  * @param {number} KeyDataBlock.count Intake count 
  * @param {string} KeyDataBlock.mesure Unit (kCal or grams)
  * @param {string} KeyDataBlock.type Intake type
+ * 
  * @returns Block displaying intakes
  */
 

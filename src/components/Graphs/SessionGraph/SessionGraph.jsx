@@ -7,6 +7,7 @@ import PropTypes from "prop-types";
  * @param {object} CustomTooltipSessions
  * @param {boolean} CustomTooltipSessions.active Boolean changing if hovering day data
  * @param {array} CustomTooltipSessions.payload Day and session length
+ * 
  * @returns custom tooltip when hovering data (in minutes)
  */
 const CustomTooltipSessions = ({ active, payload }) => {

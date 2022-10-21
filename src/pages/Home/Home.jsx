@@ -2,8 +2,12 @@ import './Home.scss'
 // import Header from '../../components/Header'
 // import Sidebar from '../../components/Sidebar'
 import { Link } from 'react-router-dom'
+// import {dataGetUser, dataGetActivity, dataGetSessions, dataGetPerformance} from '../../services/dataGet.jsx';
 
 const Home = () => {
+
+    
+
     return (
         <>  
             {/* <Header />

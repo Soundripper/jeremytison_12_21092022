@@ -5,6 +5,7 @@ import PropTypes from "prop-types";
 /**
  * 
  * @param {array} data the data for the performance graph
+ * 
  * @returns the performance activity graph
  */
 const PerformanceGraph = (data) => {

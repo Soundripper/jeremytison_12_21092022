@@ -7,6 +7,7 @@ import { USER_MAIN_DATA, USER_ACTIVITY, USER_AVERAGE_SESSIONS, USER_PERFORMANCE 
  * 
  * @param {array} data Data that comes from the Mocked data
  * @param {number} id User Id
+ * 
  * @returns Mocked data filtered with the User Id
  */
 const findData = (data, id) => {
@@ -20,6 +21,7 @@ const findData = (data, id) => {
  * 
  * @param {boolean} mock Check if using mocked data
  * @param {number} id User id from params
+ * 
  * @returns formatted user Data
  */
 const dataGetUser = async (mock, id) => {
@@ -35,6 +37,7 @@ const dataGetUser = async (mock, id) => {
  * 
  * @param {boolean} mock Check if using mocked data
  * @param {number} id User id from params
+ * 
  * @returns formatted activity Data
  */
 const dataGetActivity = async (mock, id) => {
@@ -50,6 +53,7 @@ const dataGetActivity = async (mock, id) => {
  * 
  * @param {boolean} mock Check if using mocked data
  * @param {number} id User id from params
+ * 
  * @returns formatted average-sessions Data
  */
 const dataGetSessions = async (mock, id) => {
@@ -65,6 +69,7 @@ const dataGetSessions = async (mock, id) => {
  * 
  * @param {boolean} mock Check if using mocked data
  * @param {number} id User id from params
+ * 
  * @returns formatted performance Data
  */
 const dataGetPerformance = async (mock, id) => {

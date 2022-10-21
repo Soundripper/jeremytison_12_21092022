@@ -13,6 +13,7 @@ const styleRadial = {
 /**
  * 
  * @param {array} data the data for the score graph
+ * 
  * @returns the score graph
  */
 const ScoreGraph = (data) => {

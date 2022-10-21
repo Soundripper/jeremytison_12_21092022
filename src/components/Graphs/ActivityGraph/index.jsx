@@ -72,7 +72,7 @@ const ActivityGraph = (data) => {
 }
 
 ActivityGraph.propTypes = {
-    dataActivity: PropTypes.array.isRequired,
+    dataActivity: PropTypes.array,
 }
 
 export default ActivityGraph;

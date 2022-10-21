@@ -55,7 +55,7 @@ const SessionGraph = (data) => {
 }
 
 SessionGraph.propTypes = {
-    data: PropTypes.array.isRequired,
+    data: PropTypes.array,
 }
 
 export default SessionGraph

@@ -22,7 +22,7 @@ const Profile = () => {
     /**
      * @type {boolean} set to true to use mocked data or false to use API calls 
      */
-    const mock = true;
+    const mock = false;
 
     const {id} = useParams();
     

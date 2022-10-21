@@ -29,7 +29,7 @@ const dataGetUser = async (mock, id) => {
         return formatScore(findData(USER_MAIN_DATA, id))
     }
     else{
-        const response = await axios.get(`http://localhost:3001/user/${id}`)
+        const response = await axios.get(`http://localhost:3000/user/${id}`)
         return formatScore(await response.data.data);
     }  
 }
@@ -45,7 +45,7 @@ const dataGetActivity = async (mock, id) => {
         return formatActivityDay(findData(USER_ACTIVITY, id))
     }
     else{
-        const response = await axios.get(`http://localhost:3001/user/${id}/activity`)
+        const response = await axios.get(`http://localhost:3000/user/${id}/activity`)
         return formatActivityDay(await response.data.data);
     }  
 }  
@@ -61,7 +61,7 @@ const dataGetSessions = async (mock, id) => {
         return formatSessionDay(findData(USER_AVERAGE_SESSIONS, id))
     }
     else{
-        const response = await axios.get(`http://localhost:3001/user/${id}/average-sessions`)
+        const response = await axios.get(`http://localhost:3000/user/${id}/average-sessions`)
         return formatSessionDay(await response.data.data);
     }  
 }  
@@ -77,7 +77,7 @@ const dataGetPerformance = async (mock, id) => {
         return formatPerformance(findData(USER_PERFORMANCE, id))
     }
     else{
-        const response = await axios.get(`http://localhost:3001/user/${id}/performance`)
+        const response = await axios.get(`http://localhost:3000/user/${id}/performance`)
         return formatPerformance(await response.data.data);
     }  
 }  

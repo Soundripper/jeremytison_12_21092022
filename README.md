@@ -7,7 +7,7 @@ In the terminal:
 Type "npm install" to install dependancies.
 Type "npm start" to run the application.
 
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Open [http://localhost:3001](http://localhost:3001) to view it in your browser.
 
 Click the logo to go back to the user selection page.
 

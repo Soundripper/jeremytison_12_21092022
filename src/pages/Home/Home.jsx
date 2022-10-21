@@ -1,12 +1,45 @@
 import './Home.scss'
-// import Header from '../../components/Header'
-// import Sidebar from '../../components/Sidebar'
 import { Link } from 'react-router-dom'
-// import {dataGetUser, dataGetActivity, dataGetSessions, dataGetPerformance} from '../../services/dataGet.jsx';
+import { USER_MAIN_DATA } from '../../mocks/mocked_data';
+import axios from 'axios';
+import { useState, useEffect } from 'react';
+import {dataGetUser} from '../../services/dataGet.jsx';
+import { formatScore } from '../../services/dataModeling';
+
 
 const Home = () => {
+    // const [dataUser, setDataUser] = useState();
+    // const [isLoading, setIsLoading] = useState(true);
+    // const mock = false;
 
-    
+    // useEffect(() => {
+    //     const dataGetUserHome = async () => {
+    //         if (mock){
+    //             return USER_MAIN_DATA
+    //         }
+    //         else{
+    //             const response = await axios.get(`http://localhost:3000/user/12`)
+    //             console.log(response.data.data);
+    //             return (await response.data.data);
+    //         }  
+    //     }
+
+    //     const fetchDatas = async () => {
+    //         setDataUser(await dataGetUserHome());
+    //         setIsLoading(false);
+    //         console.log(dataUser);
+    //     }
+    //     fetchDatas()
+        
+    // }, []);
+
+    // /**
+    //      * Returns loading div if data is loading
+    //      */
+    // if (isLoading) {
+    //     return <div >Loading...</div>;
+    // }
+
 
     return (
         <>  

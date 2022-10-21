@@ -28,7 +28,7 @@ const PerformanceGraph = (data) => {
 }
 
 PerformanceGraph.propTypes = {
-    data: PropTypes.array.isRequired,
+    data: PropTypes.array,
 }
 
 export default PerformanceGraph

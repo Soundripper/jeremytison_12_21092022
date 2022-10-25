@@ -9,6 +9,6 @@ Type "npm start" to run the application.
 
 Open [http://localhost:3001](http://localhost:3001) to view it in your browser.
 
-Click the logo to go back to the user selection page.
+Click the "Accueil" link in the header to go back to the user selection page.
 
 Prerequisites : node version v16

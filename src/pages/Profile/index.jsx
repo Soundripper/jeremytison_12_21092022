@@ -1,7 +1,5 @@
 import { useEffect, useState } from 'react';
 import './index.scss'
-// import Header from '../../components/Header'
-// import Sidebar from '../../components/Sidebar'
 import ActivityGraph from '../../components/Graphs/ActivityGraph';
 import PerformanceGraph from '../../components/Graphs/PerformanceGraph';
 import ScoreGraph from '../../components/Graphs/ScoreGraph/ScoreGraph';
@@ -52,8 +50,6 @@ const Profile = () => {
 
     return (
         <>  
-            {/* <Header />
-            <Sidebar /> */}
             <div className='dashBoardContainer'>
                 <div className='welcome'>
                     <h2>Bonjour&nbsp;</h2>

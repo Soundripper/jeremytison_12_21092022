@@ -4,8 +4,6 @@ import { Link } from 'react-router-dom'
 const Home = () => {
     return (
         <>  
-            {/* <Header />
-            <Sidebar /> */}
             <div className='dashBoardContainer'>
                 <div className='usersLinksContainer'>
                     <Link to="/user/12" className='userLink'>Karl</Link>

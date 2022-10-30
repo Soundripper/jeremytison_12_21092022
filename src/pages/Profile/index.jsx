@@ -39,7 +39,7 @@ const Profile = () => {
                 setIsLoading(false);
             }
             fetchDatas()
-    }, []);
+    }, [id, mock]);
     
     /**
      * Returns loading div if data is loading

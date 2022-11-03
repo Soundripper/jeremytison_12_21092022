@@ -61,7 +61,7 @@ const Profile = () => {
                         <ActivityGraph dataActivity={dataActivity.sessions} />
                         <div className='sessionsPerfsScoreContainer'>
                             <SessionGraph dataSessions={dataSessions} />
-                            <PerformanceGraph dataPerformance={dataPerformance} />
+                            <PerformanceGraph data={dataPerformance} />
                             <ScoreGraph score={dataUser.score} />
                         </div>
                     </div>

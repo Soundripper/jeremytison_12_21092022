@@ -56,6 +56,7 @@ const SessionGraph = (data) => {
 
 SessionGraph.propTypes = {
     data: PropTypes.array,
+    // data.kind: PropTypes.string
 }
 
 export default SessionGraph

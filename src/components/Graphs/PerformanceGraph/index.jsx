@@ -8,11 +8,11 @@ import PropTypes from "prop-types";
  * 
  * @returns the performance activity graph
  */
-const PerformanceGraph = (data) => {
+const PerformanceGraph = ({data, value, kind}) => {
     return (
         <div className='performanceGraphContainer'>
         <ResponsiveContainer className='perfGraph' width="100%" aspect={1}>
-            <RadarChart cx="50%" cy="50%" outerRadius="70%" data={data.dataPerformance.data}
+            <RadarChart cx="50%" cy="50%" outerRadius="70%" data={data.data}
             margin={{top: 1, right: 1, left: 1, bottom: 1}}>
             <PolarGrid radialLines={false} />
             <PolarAngleAxis dataKey="kind" stroke="#FFFFFF"
@@ -29,6 +29,7 @@ const PerformanceGraph = (data) => {
 
 PerformanceGraph.propTypes = {
     data: PropTypes.array,
+    // dataKey: 
 }
 
 export default PerformanceGraph

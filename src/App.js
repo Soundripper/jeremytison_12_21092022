@@ -11,6 +11,7 @@ import Sidebar from './components/Sidebar';
 function App() {
   return (
     <BrowserRouter>
+    {/* <BrowserRouter basename="/ocr/p12_sportsee/"> */}
     <Header />
     <Sidebar />
       <Routes>
